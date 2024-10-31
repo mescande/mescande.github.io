@@ -1,86 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>Redirecting...</title>
-	<script type="text/javascript">
-		/*
-		This file randomly redirects a user to one of the URLs in a list. It is built
-		with the intent of randomization in a controlled experiment.
+	<head>
+		<meta charset="utf-8">
+		<title>Redirecting...</title>
 
-		For example, create three Google Docs forms (or equivalent) and add their URLs
-		to the list below. That's it!
+		<script type="text/javascript">
 
-		The user is then automatically and randomly assigned to one of the URLs when
-		the user visits this file. If the user decides to close and reopen the browser,
-		the user is still redirected to the same URL since a cookie is saved in the
-		user's browser.
-		
-		Peter M. Dahlgren
-		@peterdalle
-		peterdahlgren.com
-		2016-01-05
-		*/
-		
-		// List of URLs (two or more) for the experimental treatment and control groups.
-		var RedirectURLs = {
-			"urls" : [
-				{ "url" : "http://www.aftonbladet.se/" },
-				{ "url" : "http://www.dn.se/" },
-				{ "url" : "http://www.svd.se/" }
-			]
-		}
+			var urls = new Array();
+			urls[0] = "http://learninginhand.com";
+			urls[1] = "http://learninginhand.com/about";
+			urls[2] = "http://learninginhand.com/contact";
+			urls[4] = "http://learninginhand.com/services";
+			urls[5] = "http://learninginhand.com/videos";
+			urls[6] = "http://learninginhand.com/infographics";
+			urls[7] = "http://learninginhand.com/resources";
+			urls[8] = "http://learninginhand.com/stickaround";
+			urls[9] = "http://learninginhand.com/posts";
+			urls[10] = "http://learninginhand.com/pet";
 
-		// Count the number of URLs in list.
-		var Groups = RedirectURLs.urls.length;
+			var random = Math.floor(Math.random()*urls.length);
 
-		// Randomize number and get the corresponding index for the URL in list.
-		var gotoUrl = RedirectURLs.urls[GetRandomNumber(Groups)].url
+			vart selected_url = urls[random];
 
-		// Perform redirection.
-		if (window.location.search == "?debug") {
-			// Debug mode: If user supplies a ?debug querystring,
-			// then only show the redirect URL, but don't actually redirect.
-			document.write("Redirect URL: " + gotoUrl);
-		} else {
-			// Redirect the user to the new URL.
-			document.location = gotoUrl;
-		}
+		</script>
 
-		// Perform randomization and save it to a cookie.
-		function GetRandomNumber(Groups) {
-			// Has cookie been set?
-			var rndIndex = null;
-			if (GetCookie() != "") {
-				// Yes, get randomization from cookie.
-				rndIndex = GetCookie()
-			} else {
-				// No, set random value to cookie.
-				rndIndex = Math.floor((Math.random() * Groups));
-				SetCookie(rndIndex, 30) // Set cookie for 30 days.
-			}
-			return rndIndex
-		}
-
-		// Set cookie with randomization value.
-		function SetCookie(CookieValue, DaysUntilExpire) {
-			var d = new Date();
-			d.setTime(d.getTime() + (DaysUntilExpire * 24 * 60 * 60 * 1000));
-			document.cookie = "rnd=" + CookieValue + ";expires=" + d.toUTCString();
-		}
-
-		// Get cookie with randomization value. Return empty string if not set.
-		function GetCookie() {
-			var ca = document.cookie.split(';');
-			for(var i = 0; i < ca.length; i++) {
-				var c = ca[i];
-				while (c.charAt(0) == ' ') c = c.substring(1);
-				if (c.indexOf("rnd=") == 0) return c.substring(4, c.length);
-			}
-			return "";
-		}
-	</script>
-</head>
-<body>
-</body>
+		<a href=selected_url><button></button></a>
+	</head>
+	<body>
+	</body>
 </html>
