@@ -4,23 +4,28 @@
 		<meta charset="utf-8">
 		<title>Redirecting...</title>
 
-		<script type="text/javascript">
+		<button onclick="select_URL()">Click here</button>
 
-			var urls = new Array();
-			urls[0] = "http://learninginhand.com";
-			urls[1] = "http://learninginhand.com/about";
-			urls[2] = "http://learninginhand.com/contact";
-			urls[4] = "http://learninginhand.com/services";
-			urls[5] = "http://learninginhand.com/videos";
-			urls[6] = "http://learninginhand.com/infographics";
-			urls[7] = "http://learninginhand.com/resources";
-			urls[8] = "http://learninginhand.com/stickaround";
-			urls[9] = "http://learninginhand.com/posts";
-			urls[10] = "http://learninginhand.com/pet";
+		<script>
+			function select_URL() {
+				var urls = new Array();
+				urls[0] = "https://www.youtube.com/watch?v=Sq5EDI7JktA&pp=ygUHbXVzaXF1ZQ%3D%3D";
+				urls[1] = "https://www.youtube.com/watch?v=BjfP86szUL0&pp=ygUHbXVzaXF1ZQ%3D%3D";
+				urls[2] = "https://www.youtube.com/watch?v=QZoieKd5VVc&pp=ygUHbXVzaXF1ZQ%3D%3D";
+				urls[4] = "https://www.youtube.com/watch?v=2kjolTLZ_Mg&pp=ygUHbXVzaXF1ZQ%3D%3D";
+				urls[5] = "https://www.youtube.com/watch?v=nh6gI_hzjdw&pp=ygUHbXVzaXF1ZQ%3D%3D";
+				urls[6] = "https://www.youtube.com/watch?v=jqZd10D-UDM&pp=ygUHbXVzaXF1ZQ%3D%3D";
+				urls[7] = "https://www.youtube.com/watch?v=p48ac4UNa7w&pp=ygUHbXVzaXF1ZQ%3D%3D";
+				urls[8] = "https://www.youtube.com/watch?v=K5KAc5CoCuk&pp=ygUHbXVzaXF1ZQ%3D%3D";
+				urls[9] = "https://www.youtube.com/watch?v=_bPa-VG0AWo&pp=ygUHbXVzaXF1ZQ%3D%3D";
+				urls[10] = "https://www.youtube.com/watch?v=4A6_mBW03EI&pp=ygUHbXVzaXF1ZQ%3D%3D";
 
-			var random = Math.floor(Math.random()*urls.length);
+				var random = Math.floor(Math.random()*urls.length);
+				var selected_url = urls[random];
 
-			vart selected_url = urls[random];
+				window.location.href = selected_url;
+			}
+
 
 		</script>
 
